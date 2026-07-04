@@ -1686,11 +1686,14 @@
                                                  :reading-getter (lambda () orig-reading)))
                        ("readok" (when orig-reading t))))
                    (progn
+                     (unless orig-text
+                       (return-from outer nil))
                      (let ((cij (conj-info-json via :text orig-text :has-gloss has-gloss)))
-                       (when cij
+                       (if cij
                          (jsown:extend-js js
                            ("via" cij)
-                           ("readok" (jsown:val (car cij) "readok")))))
+                           ("readok" (jsown:val (car cij) "readok")))
+                         (return-from outer nil)))
                      (push via via-used)))
                (list js)))))
 
