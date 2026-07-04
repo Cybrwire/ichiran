@@ -615,6 +615,7 @@
                       "夕べ" "さくや" "建ち並ばなきゃ" "建ち並びましてる"
                       "どおりで" "十万三" "5万100" "1234"
                       "1日" "2期" "三羽" "1万500円" "オレら"
+                      "一本取られた" "一本とられた"
                       )
        for word-info = (word-info-from-text word)
        for word-info-json = (word-info-json word-info)
